@@ -27,6 +27,7 @@
 
 	$heurenum = date("H").":".date("i");
   	$heurelit = date("G")." heure ".date("i");
+	$currentday = date("N");
  	$calendriernum = date("d")."/".date("m")."/".date("Y");
 	$tabjoursem = array("1" => "Lundi", "2" => "Mardi", "3" => "Mercredi", "4" => "Jeudi", "5" => "Vendredi", "6" => "Samedi", "7" => "Dimanche");
 	$tabjourparam = array("LUN" => 1, "MAR" => 2, "MER" => 3, "JEU" => 4, "VEN" => 5, "SAM" => 6, "DIM" => 7);
@@ -71,12 +72,13 @@
   	}
 
 	$xml .= "<REVEIL>";
-     	$xml .= "<ALARM>".$reveil."</ALARM>";
+    $xml .= "<ALARM>".$reveil."</ALARM>";
 	$xml .= "<HORLOGE>".$heurenum."</HORLOGE>";
 	$xml .= "<HORLOGEL>".$heurelit."</HORLOGEL>";
-     	$xml .= "<CALENDRIER>".$calendriernum."</CALENDRIER>";
+    $xml .= "<CALENDRIER>".$calendriernum."</CALENDRIER>";
 	$xml .= "<CALENDRIERL>".$calendrierlit."</CALENDRIERL>";
-     	$xml .= "</REVEIL>";
+	$xml .= "<DAY>".$currentday."</DAY>";
+    $xml .= "</REVEIL>";
 	sdk_header('text/xml');
 	echo $xml;
   }

@@ -2,11 +2,11 @@
 	"plugin_id": "myreveil",
 	"name_fr": "Mon réveil",
 	"icon": "reveil.png",
-	"version": "1.0",
+	"version": "1.1",
 	"creation_date": "2017-10-19",
-	"modification_date": "2017-10-19",
+	"modification_date": "2018-03-17",
 	"author": "Influman",
-	"description_fr": "Permet de créer une alarme à un horaire et jour donné.<br>Donne également l'heure actuelle et la date.",
+	"description_fr": "Permet de créer une alarme à un horaire et jour donné.<br>Donne également l'heure actuelle, la date, et le jour de la semaine pour les règles",
 	"description_en": "",
 	"description_es": "",
 	"description_it": "",
@@ -134,6 +134,36 @@
 				"RAW_XPATH": "/REVEIL/CALENDRIER",
 				"POLLING": "1"
 			}
+		},
+		{
+			"device_id": "day",
+			"parent_id": "reveil",
+			"module_id": "51",
+			"type": "http",
+			"name_fr": "Jour (plugin.parameters.ALARM)",
+			"icon": "calendar.png",
+			"utilisation_id": "35",
+			"parameters":
+			{
+				"VAR1": "plugin.parameters.ALARM",
+				"VAR2": "plugin.parameters.JOUR",
+      			"VAR3": "",
+				"value_type": "list",
+				"ignore_errors": 3,
+				"RAW_URL": "http://localhost/script/?exec=myreveil.php&mode=poll&alarm=[VAR1]&jour=[VAR2]",
+				"RAW_XPATH": "/REVEIL/DAY",
+				"POLLING": "1"
+			},
+			"values":
+			[
+				{ "value": "1", "description": "Lundi", "icon": "calendar.png" },
+				{ "value": "2", "description": "Mardi", "icon": "calendar.png" },
+				{ "value": "3", "description": "Mercredi", "icon": "calendar.png" },
+				{ "value": "4", "description": "Jeudi", "icon": "calendar.png" },
+				{ "value": "5", "description": "Vendredi", "icon": "calendar.png" },
+				{ "value": "6", "description": "Samedi", "icon": "calendar.png" },
+				{ "value": "7", "description": "Dimanche", "icon": "calendar.png" }
+			]
 		}
    ]
 }
