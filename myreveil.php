@@ -28,6 +28,7 @@
 	$heurenum = date("H").":".date("i");
   	$heurelit = date("G")." heure ".date("i");
 	$currentday = date("N");
+	$currentmonth = date("n");
  	$calendriernum = date("d")."/".date("m")."/".date("Y");
 	$tabjoursem = array("1" => "Lundi", "2" => "Mardi", "3" => "Mercredi", "4" => "Jeudi", "5" => "Vendredi", "6" => "Samedi", "7" => "Dimanche");
 	$tabjourparam = array("LUN" => 1, "MAR" => 2, "MER" => 3, "JEU" => 4, "VEN" => 5, "SAM" => 6, "DIM" => 7);
@@ -78,6 +79,7 @@
     $xml .= "<CALENDRIER>".$calendriernum."</CALENDRIER>";
 	$xml .= "<CALENDRIERL>".$calendrierlit."</CALENDRIERL>";
 	$xml .= "<DAY>".$currentday."</DAY>";
+	$xml .= "<MONTH>".$currentmonth."</MONTH>";
     $xml .= "</REVEIL>";
 	sdk_header('text/xml');
 	echo $xml;

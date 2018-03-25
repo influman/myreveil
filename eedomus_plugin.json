@@ -2,11 +2,11 @@
 	"plugin_id": "myreveil",
 	"name_fr": "Mon réveil",
 	"icon": "reveil.png",
-	"version": "1.1",
+	"version": "1.2",
 	"creation_date": "2017-10-19",
-	"modification_date": "2018-03-17",
+	"modification_date": "2018-03-23",
 	"author": "Influman",
-	"description_fr": "Permet de créer une alarme à un horaire et jour donné.<br>Donne également l'heure actuelle, la date, et le jour de la semaine pour les règles",
+	"description_fr": "Permet de créer une alarme à un horaire et jour donné.<br>Donne également l'heure actuelle, la date, le mois, le jour de la semaine pour les règles",
 	"description_en": "",
 	"description_es": "",
 	"description_it": "",
@@ -163,6 +163,41 @@
 				{ "value": "5", "description": "Vendredi", "icon": "calendar.png" },
 				{ "value": "6", "description": "Samedi", "icon": "calendar.png" },
 				{ "value": "7", "description": "Dimanche", "icon": "calendar.png" }
+			]
+		},
+		{
+			"device_id": "month",
+			"parent_id": "reveil",
+			"module_id": "51",
+			"type": "http",
+			"name_fr": "Mois (plugin.parameters.ALARM)",
+			"icon": "calendar.png",
+			"utilisation_id": "35",
+			"parameters":
+			{
+				"VAR1": "plugin.parameters.ALARM",
+				"VAR2": "plugin.parameters.JOUR",
+      			"VAR3": "",
+				"value_type": "list",
+				"ignore_errors": 3,
+				"RAW_URL": "http://localhost/script/?exec=myreveil.php&mode=poll&alarm=[VAR1]&jour=[VAR2]",
+				"RAW_XPATH": "/REVEIL/MONTH",
+				"POLLING": "1"
+			},
+			"values":
+			[
+				{ "value": "1", "description": "Janvier", "icon": "calendar.png" },
+				{ "value": "2", "description": "Février", "icon": "calendar.png" },
+				{ "value": "3", "description": "Mars", "icon": "calendar.png" },
+				{ "value": "4", "description": "Avril", "icon": "calendar.png" },
+				{ "value": "5", "description": "Mai", "icon": "calendar.png" },
+				{ "value": "6", "description": "Juin", "icon": "calendar.png" },
+				{ "value": "7", "description": "Juillet", "icon": "calendar.png" },
+				{ "value": "8", "description": "Août", "icon": "calendar.png" },
+				{ "value": "9", "description": "Septembre", "icon": "calendar.png" },
+				{ "value": "10", "description": "Octobre", "icon": "calendar.png" },
+				{ "value": "11", "description": "Novembre", "icon": "calendar.png" },
+				{ "value": "12", "description": "Décembre", "icon": "calendar.png" }
 			]
 		}
    ]
